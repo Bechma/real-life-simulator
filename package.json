@@ -6,12 +6,18 @@
   "author": "Bechma",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "bun": ">=1.4.2"
+  },
   "scripts": {
     "dev": "vite --config vite/config.dev.mjs",
-    "build": "vite build --config vite/config.prod.mjs"
+    "build": "tsc --noEmit && vite build --config vite/config.prod.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "terser": "^5.39.0",
+    "typescript": "^7.0.2",
     "vite": "^8.3.2"
   },
   "dependencies": {

@@ -7,7 +7,7 @@ export class Game extends Scene
         super('Game');
     }
 
-    create ()
+    create (): void
     {
         this.cameras.main.setBackgroundColor(0x00ff00);
 
@@ -19,7 +19,7 @@ export class Game extends Scene
             align: 'center'
         }).setOrigin(0.5);
 
-        this.input.once('pointerdown', () => {
+        this.input.once('pointerdown', (): void => {
 
             this.scene.start('GameOver');
 

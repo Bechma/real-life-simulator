@@ -3,11 +3,11 @@ import { Game as MainGame } from './scenes/Game';
 import { GameOver } from './scenes/GameOver';
 import { MainMenu } from './scenes/MainMenu';
 import { Preloader } from './scenes/Preloader';
-import { AUTO, Game, Scale } from 'phaser';
+import { AUTO, Game, Scale, type Types } from 'phaser';
 
 //  Find out more information about the Game Config at:
 //  https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
-const config = {
+const config: Types.Core.GameConfig = {
     type: AUTO,
     width: 1024,
     height: 768,
@@ -26,7 +26,7 @@ const config = {
     ]
 };
 
-const StartGame = (parent) => {
+const StartGame = (parent: string): Game => {
 
     return new Game({ ...config, parent });
 

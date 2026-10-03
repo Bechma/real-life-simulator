@@ -7,7 +7,7 @@ export class MainMenu extends Scene
         super('MainMenu');
     }
 
-    create ()
+    create (): void
     {
         this.add.image(512, 384, 'background');
 
@@ -19,7 +19,7 @@ export class MainMenu extends Scene
             align: 'center'
         }).setOrigin(0.5);
 
-        this.input.once('pointerdown', () => {
+        this.input.once('pointerdown', (): void => {
 
             this.scene.start('Game');
 

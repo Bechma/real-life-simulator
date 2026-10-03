@@ -7,7 +7,7 @@ export class Preloader extends Scene
         super('Preloader');
     }
 
-    init ()
+    init (): void
     {
         //  We loaded this image in our Boot Scene, so we can display it here
         this.add.image(512, 384, 'background');
@@ -19,7 +19,7 @@ export class Preloader extends Scene
         const bar = this.add.rectangle(512-230, 384, 4, 28, 0xffffff);
 
         //  Use the 'progress' event emitted by the LoaderPlugin to update the loading bar
-        this.load.on('progress', (progress) => {
+        this.load.on('progress', (progress: number): void => {
 
             //  Update the progress bar (our bar is 464px wide, so 100% = 464px)
             bar.width = 4 + (460 * progress);
@@ -27,7 +27,7 @@ export class Preloader extends Scene
         });
     }
 
-    preload ()
+    preload (): void
     {
         //  Load the assets for the game - Replace with your own assets
         this.load.setPath('assets');
@@ -35,7 +35,7 @@ export class Preloader extends Scene
         this.load.image('logo', 'logo.png');
     }
 
-    create ()
+    create (): void
     {
         //  When all the assets have loaded, it's often worth creating global objects here that the rest of the game can use.
         //  For example, you can define global animations here, so we can use them in other scenes.
